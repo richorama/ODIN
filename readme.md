@@ -47,6 +47,8 @@ Middleware currently available:
 
 * FanOut (read/write multiple stores)
 * Partition (split your key range into smaller partitions)
+* Counter (counts the number of requests to each method)
+* LoadBalancer (Send the request to a store using a round robin load balancer)
 
 Middleware planned:
 
