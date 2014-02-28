@@ -3,7 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Odin.FileStoreProvider
+namespace Odin.Providers.FileStoreProvider
 {
     public class OdinFileStore : IOdin
     {

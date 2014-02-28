@@ -63,12 +63,15 @@ Middleware planned:
 
 A consumer will take an `IOdin` object on it's constructor, but will expose a different API, providing a specialisation for a particular querying need.
 
+Consumes currently available:
+
+* Json serializer
+
 Consumers planned:
 
 * Triple store
 * Free text index
 * Geospatial index
-* Object serialisation and type safety
 
 ## License
 

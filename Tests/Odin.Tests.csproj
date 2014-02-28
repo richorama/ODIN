@@ -50,27 +50,32 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="ConsumerTests.cs" />
     <Compile Include="OdinTests.cs" />
     <Compile Include="MiddlewareTests.cs" />
     <Compile Include="ProviderTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Providers\TableStoreProvider\Odin.TableStoreProvider.csproj">
+    <ProjectReference Include="..\Odin.JsonSerializer\Odin.Consumers.JsonSerializer.csproj">
+      <Project>{a6454837-9a6d-4b21-894e-51387177d1ae}</Project>
+      <Name>Odin.Consumers.JsonSerializer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Providers\TableStoreProvider\Odin.Providers.TableStoreProvider.csproj">
       <Project>{df1febe4-5573-4272-b185-1499a3591296}</Project>
-      <Name>Odin.TableStoreProvider</Name>
+      <Name>Odin.Providers.TableStoreProvider</Name>
     </ProjectReference>
     <ProjectReference Include="..\Odin\Odin.csproj">
       <Project>{31b32bb6-a8f2-4ee8-b201-be3870090862}</Project>
       <Name>Odin</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Providers\FileStoreProvider\Odin.FileStoreProvider.csproj">
+    <ProjectReference Include="..\Providers\FileStoreProvider\Odin.Providers.FileStoreProvider.csproj">
       <Project>{cee0bf18-b5db-4c2f-aaaa-9b6bfc85ae5a}</Project>
-      <Name>Odin.FileStoreProvider</Name>
+      <Name>Odin.Providers.FileStoreProvider</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Providers\MemoryStoreProvider\Odin.MemoryStoreProvider.csproj">
+    <ProjectReference Include="..\Providers\MemoryStoreProvider\Odin.Providers.MemoryStoreProvider.csproj">
       <Project>{6cbd499b-5fb9-4afc-81f3-56d935827b0b}</Project>
-      <Name>Odin.MemoryStoreProvider</Name>
+      <Name>Odin.Providers.MemoryStoreProvider</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading.Tasks;
-using Odin.TableStoreProvider;
-using Odin.MemoryStoreProvider;
-using Odin.FileStoreProvider;
+using Odin.Providers.TableStoreProvider;
+using Odin.Providers.MemoryStoreProvider;
+using Odin.Providers.FileStoreProvider;
 
 namespace Odin.Tests
 {

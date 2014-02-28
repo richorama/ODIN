@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Odin.MemoryStoreProvider
+namespace Odin.Providers.MemoryStoreProvider
 {
     public class OdinMemoryStore : IOdin
     {

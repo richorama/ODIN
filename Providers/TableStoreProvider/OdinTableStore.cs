@@ -6,7 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 
-namespace Odin.TableStoreProvider
+namespace Odin.Providers.TableStoreProvider
 {
     public class OdinTableStore : IOdin
     {

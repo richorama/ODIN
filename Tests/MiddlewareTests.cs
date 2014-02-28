@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Odin.MemoryStoreProvider;
 using Odin.Middleware;
+using Odin.Providers.MemoryStoreProvider;
 using System.Threading.Tasks;
 
 namespace Odin.Tests
