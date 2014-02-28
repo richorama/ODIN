@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Odin", "Odin\Odin.csproj", "{31B32BB6-A8F2-4EE8-B201-BE3870090862}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Odin.FileStoreProvider", "Providers\FileStoreProvider\Odin.FileStoreProvider.csproj", "{CEE0BF18-B5DB-4C2F-AAAA-9B6BFC85AE5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Odin.MemoryStoreProvider", "Providers\MemoryStoreProvider\Odin.MemoryStoreProvider.csproj", "{6CBD499B-5FB9-4AFC-81F3-56D935827B0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Odin.TableStoreProvider", "Providers\TableStoreProvider\Odin.TableStoreProvider.csproj", "{DF1FEBE4-5573-4272-B185-1499A3591296}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Providers", "Providers", "{4EAE8E39-E58A-40A4-A597-34BE79B3559E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Odin.Tests", "Tests\Odin.Tests.csproj", "{7B1DC472-4F9D-436B-85AF-030923E76944}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{31B32BB6-A8F2-4EE8-B201-BE3870090862}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31B32BB6-A8F2-4EE8-B201-BE3870090862}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31B32BB6-A8F2-4EE8-B201-BE3870090862}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31B32BB6-A8F2-4EE8-B201-BE3870090862}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEE0BF18-B5DB-4C2F-AAAA-9B6BFC85AE5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEE0BF18-B5DB-4C2F-AAAA-9B6BFC85AE5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEE0BF18-B5DB-4C2F-AAAA-9B6BFC85AE5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEE0BF18-B5DB-4C2F-AAAA-9B6BFC85AE5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CBD499B-5FB9-4AFC-81F3-56D935827B0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CBD499B-5FB9-4AFC-81F3-56D935827B0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CBD499B-5FB9-4AFC-81F3-56D935827B0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CBD499B-5FB9-4AFC-81F3-56D935827B0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF1FEBE4-5573-4272-B185-1499A3591296}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF1FEBE4-5573-4272-B185-1499A3591296}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF1FEBE4-5573-4272-B185-1499A3591296}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF1FEBE4-5573-4272-B185-1499A3591296}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B1DC472-4F9D-436B-85AF-030923E76944}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B1DC472-4F9D-436B-85AF-030923E76944}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B1DC472-4F9D-436B-85AF-030923E76944}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B1DC472-4F9D-436B-85AF-030923E76944}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DF1FEBE4-5573-4272-B185-1499A3591296} = {4EAE8E39-E58A-40A4-A597-34BE79B3559E}
+		{CEE0BF18-B5DB-4C2F-AAAA-9B6BFC85AE5A} = {4EAE8E39-E58A-40A4-A597-34BE79B3559E}
+		{6CBD499B-5FB9-4AFC-81F3-56D935827B0B} = {4EAE8E39-E58A-40A4-A597-34BE79B3559E}
+	EndGlobalSection
+EndGlobal
