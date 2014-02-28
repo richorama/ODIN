@@ -39,6 +39,8 @@
     <Compile Include="IOdin.cs" />
     <Compile Include="KeyValue.cs" />
     <Compile Include="Middleware\FanOut.cs" />
+    <Compile Include="Middleware\Counter.cs" />
+    <Compile Include="Middleware\LoadBalancer.cs" />
     <Compile Include="Middleware\Partition.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
