@@ -17,7 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Odin.Tests", "Tests\Odin.Te
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Consumers", "Consumers", "{F3468C05-B6F8-48B7-BC27-198D6ED2027F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Odin.Consumers.JsonSerializer", "Odin.JsonSerializer\Odin.Consumers.JsonSerializer.csproj", "{A6454837-9A6D-4B21-894E-51387177D1AE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Odin.Consumers.JsonSerializer", "Consumers\JsonSerializer\Odin.Consumers.JsonSerializer.csproj", "{A6454837-9A6D-4B21-894E-51387177D1AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

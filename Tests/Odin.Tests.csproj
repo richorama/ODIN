@@ -57,7 +57,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Odin.JsonSerializer\Odin.Consumers.JsonSerializer.csproj">
+    <ProjectReference Include="..\Consumers\JsonSerializer\Odin.Consumers.JsonSerializer.csproj">
       <Project>{a6454837-9a6d-4b21-894e-51387177d1ae}</Project>
       <Name>Odin.Consumers.JsonSerializer</Name>
     </ProjectReference>
