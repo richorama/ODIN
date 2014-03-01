@@ -1,9 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Odin.Consumers.Triplestore;
 using Odin.Providers.MemoryStoreProvider;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Odin.Tests
@@ -31,5 +29,19 @@ namespace Odin.Tests
             Assert.AreEqual("Baz", (await jsonConsumer.Search()).First().Value.Bar);
         }
 
+        [TestMethod]
+        public async Task TestTripleStore()
+        {
+            var memStore = new OdinMemoryStore();
+            var store = new OdinTriplestore(memStore);
+            await store.Put("Richard", "Loves", "Cheese");
+            await store.Put("Richard", "Hates", "Marmite");
+            await store.Put("Dave", "Loves", "Marmite");
+
+            Assert.AreEqual(9, (await memStore.Search()).Count());
+            Assert.AreEqual(1, (await store.Get("Richard", "Loves", "Cheese")).Count());
+            Assert.AreEqual(2, (await store.Get(subject: "Richard")).Count());
+            Assert.AreEqual(3, (await store.Get()).Count());
+        }
     }
 }

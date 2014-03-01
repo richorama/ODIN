@@ -61,6 +61,10 @@
       <Project>{a6454837-9a6d-4b21-894e-51387177d1ae}</Project>
       <Name>Odin.Consumers.JsonSerializer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Odin.Consumers.Triplestore\Odin.Consumers.Triplestore.csproj">
+      <Project>{59c2429f-91e5-426a-81fd-369893c6bc19}</Project>
+      <Name>Odin.Consumers.Triplestore</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Providers\TableStoreProvider\Odin.Providers.TableStoreProvider.csproj">
       <Project>{df1febe4-5573-4272-b185-1499a3591296}</Project>
       <Name>Odin.Providers.TableStoreProvider</Name>

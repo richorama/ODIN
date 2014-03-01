@@ -19,6 +19,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Consumers", "Consumers", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Odin.Consumers.JsonSerializer", "Consumers\JsonSerializer\Odin.Consumers.JsonSerializer.csproj", "{A6454837-9A6D-4B21-894E-51387177D1AE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Odin.Consumers.Triplestore", "Odin.Consumers.Triplestore\Odin.Consumers.Triplestore.csproj", "{59C2429F-91E5-426A-81FD-369893C6BC19}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,10 @@ Global
 		{A6454837-9A6D-4B21-894E-51387177D1AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A6454837-9A6D-4B21-894E-51387177D1AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A6454837-9A6D-4B21-894E-51387177D1AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59C2429F-91E5-426A-81FD-369893C6BC19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59C2429F-91E5-426A-81FD-369893C6BC19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59C2429F-91E5-426A-81FD-369893C6BC19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59C2429F-91E5-426A-81FD-369893C6BC19}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -58,5 +64,6 @@ Global
 		{DF1FEBE4-5573-4272-B185-1499A3591296} = {4EAE8E39-E58A-40A4-A597-34BE79B3559E}
 		{CEE0BF18-B5DB-4C2F-AAAA-9B6BFC85AE5A} = {4EAE8E39-E58A-40A4-A597-34BE79B3559E}
 		{A6454837-9A6D-4B21-894E-51387177D1AE} = {F3468C05-B6F8-48B7-BC27-198D6ED2027F}
+		{59C2429F-91E5-426A-81FD-369893C6BC19} = {F3468C05-B6F8-48B7-BC27-198D6ED2027F}
 	EndGlobalSection
 EndGlobal
