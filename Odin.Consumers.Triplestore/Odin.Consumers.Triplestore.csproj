@@ -39,7 +39,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GraphEntity.cs" />
     <Compile Include="OdinTriplestore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Triple.cs" />

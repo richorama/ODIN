@@ -10,11 +10,11 @@ namespace Odin.Consumers.Triplestore
 {
     public class OdinTriplestore
     {
-        OdinJsonSerializer<GraphEntity> Store { get; set; }
+        OdinJsonSerializer<Triple> Store { get; set; }
 
         public OdinTriplestore(IOdin odin)
         {
-            this.Store = new OdinJsonSerializer<GraphEntity>(odin);
+            this.Store = new OdinJsonSerializer<Triple>(odin);
             this.KeyEncoder = MD5Hash;
         }
 
@@ -26,10 +26,9 @@ namespace Odin.Consumers.Triplestore
         public async Task Put(Triple triple)
         {
             var tasks = new List<Task>();
-            var entity = new GraphEntity(triple);
-            tasks.Add(this.Store.Put(JoinKey(PROPERTY_SUBJECT, triple.Property, triple.Subject, triple.Value), entity));
-            tasks.Add(this.Store.Put(JoinKey(SUBJECT_VALUE, triple.Subject, triple.Value, triple.Property), entity));
-            tasks.Add(this.Store.Put(JoinKey(VALUE_PROPERTY, triple.Value, triple.Property, triple.Subject), entity));
+            tasks.Add(this.Store.Put(JoinKey(PROPERTY_SUBJECT, triple.Property, triple.Subject, triple.Value), triple));
+            tasks.Add(this.Store.Put(JoinKey(SUBJECT_VALUE, triple.Subject, triple.Value, triple.Property), triple));
+            tasks.Add(this.Store.Put(JoinKey(VALUE_PROPERTY, triple.Value, triple.Property, triple.Subject), triple));
             await Task.WhenAll(tasks);
 
         }
@@ -115,18 +114,18 @@ namespace Odin.Consumers.Triplestore
         private async Task<IEnumerable<Triple>> QueryTriples(string dimension, string pk1, string pk2)
         {
             var subRange = string.Join(SEPARATOR, dimension, pk1, pk2);
-            return (await this.Store.Search(subRange, subRange + SEPARATOR)).Select(x => x.Value.ToTriple());
+            return (await this.Store.Search(subRange, subRange + SEPARATOR)).Select(x => x.Value);
         }
 
         private async Task<IEnumerable<Triple>> QueryTriples(string dimension, string pk1)
         {
             var subRange = string.Join(SEPARATOR, dimension, KeyEncoder(pk1));
-            return (await this.Store.Search(subRange + SEPARATOR, subRange + SEPARATOR + SEPARATOR)).Select(x => x.Value.ToTriple());
+            return (await this.Store.Search(subRange + SEPARATOR, subRange + SEPARATOR + SEPARATOR)).Select(x => x.Value);
         }
 
         private async Task<IEnumerable<Triple>> QueryTriples()
         {
-            return (await this.Store.Search(SUBJECT_VALUE + SEPARATOR, SUBJECT_VALUE + SEPARATOR + SEPARATOR)).Select(x => x.Value.ToTriple());
+            return (await this.Store.Search(SUBJECT_VALUE + SEPARATOR, SUBJECT_VALUE + SEPARATOR + SEPARATOR)).Select(x => x.Value);
         }
 
         public Func<string, string> KeyEncoder { get; set; }
