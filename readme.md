@@ -66,10 +66,10 @@ A consumer will take an `IOdin` object on it's constructor, but will expose a di
 Consumes currently available:
 
 * Json serializer
+* Triple store
 
 Consumers planned:
 
-* Triple store
 * Free text index
 * Geospatial index
 
