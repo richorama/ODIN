@@ -1,3 +1,5 @@
+ __WARNING: this is a crazy experiment__
+
 # ODIN
 
 Open Data Interface for .Net
