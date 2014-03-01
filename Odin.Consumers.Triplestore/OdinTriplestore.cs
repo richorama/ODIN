@@ -18,38 +18,38 @@ namespace Odin.Consumers.Triplestore
             this.KeyEncoder = MD5Hash;
         }
 
-        private const string PROPERTY_SUBJECT = "ps";
-        private const string SUBJECT_VALUE = "sv";
-        private const string VALUE_PROPERTY = "vp";
+        private const string PREDICATE_SUBJECT = "ps";
+        private const string SUBJECT_OBJECT = "so";
+        private const string OBJECT_PREDICATE = "op";
         private readonly string SEPARATOR = "" + (char)254;
 
         public async Task Put(Triple triple)
         {
             var tasks = new List<Task>();
-            tasks.Add(this.Store.Put(JoinKey(PROPERTY_SUBJECT, triple.Property, triple.Subject, triple.Value), triple));
-            tasks.Add(this.Store.Put(JoinKey(SUBJECT_VALUE, triple.Subject, triple.Value, triple.Property), triple));
-            tasks.Add(this.Store.Put(JoinKey(VALUE_PROPERTY, triple.Value, triple.Property, triple.Subject), triple));
+            tasks.Add(this.Store.Put(JoinKey(PREDICATE_SUBJECT, triple.Predicate, triple.Subject, triple.Object), triple));
+            tasks.Add(this.Store.Put(JoinKey(SUBJECT_OBJECT, triple.Subject, triple.Object, triple.Predicate), triple));
+            tasks.Add(this.Store.Put(JoinKey(OBJECT_PREDICATE, triple.Object, triple.Predicate, triple.Subject), triple));
             await Task.WhenAll(tasks);
 
         }
 
-        public async Task Put(string subject, string property, string value)
+        public async Task Put(string subject, string predicate, string @object)
         {
-            await this.Put(new Triple(subject, property, value));
+            await this.Put(new Triple(subject, predicate, @object));
         }
 
         public Task Delete(Triple triple)
         {
             var tasks = new List<Task>();
-            tasks.Add(this.Store.Delete(JoinKey(PROPERTY_SUBJECT, triple.Property, triple.Subject, triple.Value)));
-            tasks.Add(this.Store.Delete(JoinKey(SUBJECT_VALUE, triple.Subject, triple.Value, triple.Property)));
-            tasks.Add(this.Store.Delete(JoinKey(VALUE_PROPERTY, triple.Value, triple.Property, triple.Subject)));
+            tasks.Add(this.Store.Delete(JoinKey(PREDICATE_SUBJECT, triple.Predicate, triple.Subject, triple.Object)));
+            tasks.Add(this.Store.Delete(JoinKey(SUBJECT_OBJECT, triple.Subject, triple.Object, triple.Predicate)));
+            tasks.Add(this.Store.Delete(JoinKey(OBJECT_PREDICATE, triple.Object, triple.Predicate, triple.Subject)));
             return Task.WhenAll(tasks);
         }
 
-        public void Delete(string subject, string property, string value)
+        public void Delete(string subject, string predicate, string @object)
         {
-            this.Delete(new Triple(subject, property, value));
+            this.Delete(new Triple(subject, predicate, @object));
         }
 
         private string JoinKey(string dimension, string value1, string value2, string value3)
@@ -57,56 +57,56 @@ namespace Odin.Consumers.Triplestore
             return string.Join(SEPARATOR, dimension, KeyEncoder(value1), KeyEncoder(value2), KeyEncoder(value3));
         }
 
-        public Task<IEnumerable<Triple>> Get(string subject = "", string property = "", string value = "")
+        public Task<IEnumerable<Triple>> Get(string subject = "", string predicate = "", string @object = "")
         {
             var hasSubject = !string.IsNullOrWhiteSpace(subject);
-            var hasProperty = !string.IsNullOrWhiteSpace(property);
-            var hasValue = !string.IsNullOrWhiteSpace(value);
+            var hasPredicate = !string.IsNullOrWhiteSpace(predicate);
+            var hasObject = !string.IsNullOrWhiteSpace(@object);
 
             // this is where we wish .NET has pattern matching
-            if (hasSubject && hasProperty && hasValue)
+            if (hasSubject && hasPredicate && hasObject)
             {
                 // simple case, retrieve the entity
-                return RetrieveSingleTriple(subject, property, value);
+                return RetrieveSingleTriple(subject, predicate, @object);
             }
             if (hasSubject)
             {
                 // find by subject
-                if (hasProperty)
+                if (hasPredicate)
                 {
                     // subject and property
-                    return QueryTriples(PROPERTY_SUBJECT, property, subject);
+                    return QueryTriples(PREDICATE_SUBJECT, predicate, subject);
                 }
-                if (hasValue)
+                if (hasObject)
                 {
                     // subject and value
-                    return QueryTriples(SUBJECT_VALUE, subject, value);
+                    return QueryTriples(SUBJECT_OBJECT, subject, @object);
                 }
-                return QueryTriples(SUBJECT_VALUE, subject);
+                return QueryTriples(SUBJECT_OBJECT, subject);
             }
-            if (hasValue)
+            if (hasObject)
             {
-                if (hasProperty)
+                if (hasPredicate)
                 {
-                    return QueryTriples(VALUE_PROPERTY, value, property);
+                    return QueryTriples(OBJECT_PREDICATE, @object, predicate);
                 }
-                return QueryTriples(VALUE_PROPERTY, value);
+                return QueryTriples(OBJECT_PREDICATE, @object);
             }
-            if (hasProperty)
+            if (hasPredicate)
             {
-                return QueryTriples(PROPERTY_SUBJECT, property);
+                return QueryTriples(PREDICATE_SUBJECT, predicate);
             }
 
             // return all triples, not recommended!
             return QueryTriples();
         }
 
-        private async Task<IEnumerable<Triple>> RetrieveSingleTriple(string subject, string property, string value)
+        private async Task<IEnumerable<Triple>> RetrieveSingleTriple(string subject, string predicate, string @object)
         {
-            var val = await this.Store.Get(JoinKey(SUBJECT_VALUE, subject, value, property));
+            var val = await this.Store.Get(JoinKey(SUBJECT_OBJECT, subject, @object, predicate));
             if (null != val)
             {
-                return new Triple[] { new Triple(subject, property, value) };
+                return new Triple[] { new Triple(subject, predicate, @object) };
             }
             return new Triple[] { };
         }
@@ -125,7 +125,7 @@ namespace Odin.Consumers.Triplestore
 
         private async Task<IEnumerable<Triple>> QueryTriples()
         {
-            return (await this.Store.Search(SUBJECT_VALUE + SEPARATOR, SUBJECT_VALUE + SEPARATOR + SEPARATOR)).Select(x => x.Value);
+            return (await this.Store.Search(SUBJECT_OBJECT + SEPARATOR, SUBJECT_OBJECT + SEPARATOR + SEPARATOR)).Select(x => x.Value);
         }
 
         public Func<string, string> KeyEncoder { get; set; }
