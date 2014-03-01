@@ -57,7 +57,6 @@ Middleware planned:
 * Retry (add retry logic to the requests)
 * Cache (apply a read cache)
 * Single Thread (enforce single threaded access policy)
-* Load balancing (balance read writes across a number of stores)
 * Read/write events
 * Logger (logs all events to another store)
 
