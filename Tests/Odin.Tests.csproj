@@ -61,11 +61,11 @@
       <Project>{a6454837-9a6d-4b21-894e-51387177d1ae}</Project>
       <Name>Odin.Consumers.JsonSerializer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Odin.Consumers.Triplestore\Odin.Consumers.Triplestore.csproj">
+    <ProjectReference Include="..\Consumers\Triplestore\Odin.Consumers.Triplestore.csproj">
       <Project>{59c2429f-91e5-426a-81fd-369893c6bc19}</Project>
       <Name>Odin.Consumers.Triplestore</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Odin.Middleware.Cache\Odin.Middleware.Cache.csproj">
+    <ProjectReference Include="..\Middleware\Cache\Odin.Middleware.Cache.csproj">
       <Project>{cc0510e8-266c-4f26-80ea-8d0a9d96bfd2}</Project>
       <Name>Odin.Middleware.Cache</Name>
     </ProjectReference>
