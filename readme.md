@@ -1,3 +1,5 @@
+ __WARNING: this is a crazy experiment__
+
 # ODIN
 
 Open Data Interface for .Net
@@ -55,7 +57,6 @@ Middleware planned:
 
 * Retry (add retry logic to the requests)
 * Single Thread (enforce single threaded access policy)
-* Load balancing (balance read writes across a number of stores)
 * Read/write events
 * Logger (logs all events to another store)
 
