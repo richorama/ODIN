@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Odin.Middleware;
 using Odin.Providers.MemoryStoreProvider;
+using System;
 using System.Threading.Tasks;
 
 namespace Odin.Tests
@@ -81,6 +82,14 @@ namespace Odin.Tests
             Assert.AreEqual(1, counter.DeleteCount);
 
             await OdinTests.BasicOperations(counter);
+        }
+
+        [TestMethod]
+        public async Task TestCache()
+        {
+            var odin = new OdinMemoryStore();
+            var cache = new OdinCache(odin, TimeSpan.FromMinutes(1));
+            await OdinTests.BasicOperations(cache);            
         }
 
     }

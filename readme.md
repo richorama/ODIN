@@ -49,11 +49,11 @@ Middleware currently available:
 * Partition (split your key range into smaller partitions)
 * Counter (counts the number of requests to each method)
 * LoadBalancer (Send the request to a store using a round robin load balancer)
+* Cache (uses an in-memory cache)
 
 Middleware planned:
 
 * Retry (add retry logic to the requests)
-* Cache (apply a read cache)
 * Single Thread (enforce single threaded access policy)
 * Load balancing (balance read writes across a number of stores)
 * Read/write events
