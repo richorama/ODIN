@@ -1,9 +1,9 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Threading.Tasks;
-using Odin.Providers.TableStoreProvider;
-using Odin.Providers.MemoryStoreProvider;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Odin.Providers.FileStoreProvider;
+using Odin.Providers.MemoryStoreProvider;
+using Odin.Providers.RedisStoreProvider;
+using Odin.Providers.TableStoreProvider;
+using System.Threading.Tasks;
 
 namespace Odin.Tests
 {
@@ -30,6 +30,14 @@ namespace Odin.Tests
         {
             var fileStore = new OdinFileStore(@"c:\test");
             await OdinTests.BasicOperations(fileStore);
+        }
+
+
+        [TestMethod]
+        public async Task RedisStore()
+        {
+            var redisStore = new OdinRedisStore();
+            await OdinTests.BasicOperations(redisStore);
         }
 
     }

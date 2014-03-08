@@ -69,6 +69,10 @@
       <Project>{cc0510e8-266c-4f26-80ea-8d0a9d96bfd2}</Project>
       <Name>Odin.Middleware.Cache</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Providers\RedisStoreProvider\Odin.Providers.RedisStoreProvider.csproj">
+      <Project>{a3a29de4-bf86-47e5-9010-f7ff48c1fa94}</Project>
+      <Name>Odin.Providers.RedisStoreProvider</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Providers\TableStoreProvider\Odin.Providers.TableStoreProvider.csproj">
       <Project>{df1febe4-5573-4272-b185-1499a3591296}</Project>
       <Name>Odin.Providers.TableStoreProvider</Name>
