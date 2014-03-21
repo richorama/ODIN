@@ -52,6 +52,7 @@ Middleware currently available:
 * Counter (counts the number of requests to each method)
 * LoadBalancer (Send the request to a store using a round robin load balancer)
 * Cache (uses an in-memory cache)
+* Tracer (writes data access activity to trace)
 
 Middleware planned:
 
