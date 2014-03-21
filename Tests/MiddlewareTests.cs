@@ -92,5 +92,13 @@ namespace Odin.Tests
             await OdinTests.BasicOperations(cache);            
         }
 
+        [TestMethod]
+        public async Task TestTracer()
+        {
+            var odin = new OdinMemoryStore();
+            var tracer = new OdinTracer(odin);
+            await OdinTests.BasicOperations(tracer);
+        }
+
     }
 }
