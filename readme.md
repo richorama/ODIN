@@ -8,7 +8,7 @@ An interface which allows the decoupling of application and storage system. The 
 
 # The Concept
 
-Taking inspiration from [OWIN](http://owin.org/) (Open Web Interface for .Net) and the interesting stuff going on with [LevelDB and Node.js](https://github.com/rvagg/node-levelup) I thought it would be interesting to define an interface for accessing data in a NoSQL, key/value pair style.
+Taking inspiration from [OWIN](http://owin.org/) (Open Web Interface for .Net) and what's going on with [LevelDB and Node.js](https://github.com/rvagg/node-levelup) I thought it would be interesting to define a .NET interface for accessing data in a NoSQL, key/value pair style.
 
 This interface is supposed to be simple and provide a lowest-common-denominator for key/value stores. Databases will always offer more exotic features and optimisations for which this interface can't cater for.
 
@@ -16,7 +16,7 @@ However, using the interface has some interesting benefits:
 
 1. You can switch out the underlying database easily. i.e. you can switch from in-memory, to local disk, to Windows Azure Storage.
 1. You can introduce middleware in the data read/write pipeline, to allow features such as caching and retry policies.
-1. You can build more sophisticated APIs over the top of the interface. A triple store is currently available, but more are planned.
+1. You can build more sophisticated APIs over the top of the interface. A triple store and a JSON serializer are currently available, but more are planned.
 
 An example of building up an Odin data pipeline:
 
@@ -29,11 +29,13 @@ IOdin tracer = new OdinTracer(odinStore);
 
 // create a strongly typed api to access the store
 var jsonStore = new OdinJsonSerializer<Foo>(tracer);
+
+// you now consume the jsonStore in your application
 ```
 
 ## The Interface
 
-The ODIN interface is designed to be an extremely basic key-value store, and supports async.
+The ODIN interface is designed to be an extremely basic key-value store. It also async.
 
 ```cs
 public interface IOdin
@@ -57,13 +59,13 @@ Storage providers currently available:
 * In Memory
 * File System
 * Windows Azure Table Storage
+* Redis
 
 Storage providers planned:
 
-* Redis
-* Windows Azure Blob Storage
 * SQL
-* STDIN/STDOUT
+* STDIN/STDOUT?
+* Application Settings?
 * ...
 
 ## Middleware
