@@ -2,7 +2,7 @@
 
 # ODIN
 
-Open Data Interface for .Net
+__Open Data Interface for .Net__
 
 An interface which allows the decoupling of application and storage system. The interface also encourages 'middleware' to be used between application code and the database.
 
@@ -13,6 +13,7 @@ Taking inspiration from [OWIN](http://owin.org/) (Open Web Interface for .Net) a
 This interface is supposed to be simple and provide a lowest-common-denominator for key/value stores. Databases will always offer more exotic features and optimisations for which this interface can't cater for.
 
 However, using the interface has some interesting benefits:
+
 1. You can switch out the underlying database easily. i.e. you can switch from in-memory, to local disk, to Windows Azure Storage.
 1. You can introduce middleware in the data read/write pipeline, to allow features such as caching and retry policies.
 1. You can build more sophisticated APIs over the top of the interface. A triple store is currently available, but more are planned.
@@ -23,7 +24,7 @@ An example of building up an Odin data pipeline:
 // create a store to hold records in memory (this could be Windows Azure, Redis or files)
 IOdin odinStore = new OdinMemoryStore();
 
-// create a tracing middleware to write all data access to trace for debugging
+// create a middleware to write all data access to trace for debugging
 IOdin tracer = new OdinTracer(odinStore);
 
 // create a strongly typed api to access the store
