@@ -69,7 +69,7 @@
       <Project>{cc0510e8-266c-4f26-80ea-8d0a9d96bfd2}</Project>
       <Name>Odin.Middleware.Cache</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Odin.Middleware.Tracer\Odin.Middleware.Tracer.csproj">
+    <ProjectReference Include="..\Middleware\Tracer\Odin.Middleware.Tracer.csproj">
       <Project>{e06daa38-b8bc-407d-85b5-14be41ba23f5}</Project>
       <Name>Odin.Middleware.Tracer</Name>
     </ProjectReference>

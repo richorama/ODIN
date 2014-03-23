@@ -43,7 +43,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Odin\Odin.csproj">
+    <ProjectReference Include="..\..\Odin\Odin.csproj">
       <Project>{31b32bb6-a8f2-4ee8-b201-be3870090862}</Project>
       <Name>Odin</Name>
     </ProjectReference>
