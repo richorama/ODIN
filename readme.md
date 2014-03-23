@@ -18,7 +18,7 @@ However, using the interface has some interesting benefits:
 1. You can introduce middleware in the data read/write pipeline, to allow features such as caching and retry policies.
 1. You can build more sophisticated APIs over the top of the interface. A triple store and a JSON serializer are currently available, but more are planned.
 
-An example of building up an Odin data pipeline:
+An example of building up an ODIN data pipeline:
 
 ```cs
 // create a store to hold records in memory (this could be Windows Azure, Redis or files)
@@ -35,7 +35,7 @@ var jsonStore = new OdinJsonSerializer<Foo>(tracer);
 
 ## The Interface
 
-The ODIN interface is designed to be an extremely basic key-value store. It also async.
+The ODIN interface is designed to be an extremely basic key/value store. It's also async.
 
 ```cs
 public interface IOdin
@@ -90,7 +90,7 @@ Middleware planned:
 
 ## Consumers
 
-A consumer will take an `IOdin` object on it's constructor, but will expose a different API, providing a specialisation for a particular querying need.
+A consumer will take an IOdin object on it's constructor, but will expose a different API, providing a specialisation for a particular querying need.
 
 Consumes currently available:
 
