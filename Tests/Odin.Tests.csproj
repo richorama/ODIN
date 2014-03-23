@@ -73,6 +73,10 @@
       <Project>{e06daa38-b8bc-407d-85b5-14be41ba23f5}</Project>
       <Name>Odin.Middleware.Tracer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Middleware\Versioner\Odin.Middleware.Versioner.csproj">
+      <Project>{301a172b-2894-4175-b750-5726463a237b}</Project>
+      <Name>Odin.Middleware.Versioner</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Providers\RedisStoreProvider\Odin.Providers.RedisStoreProvider.csproj">
       <Project>{a3a29de4-bf86-47e5-9010-f7ff48c1fa94}</Project>
       <Name>Odin.Providers.RedisStoreProvider</Name>

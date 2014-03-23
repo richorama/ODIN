@@ -1,7 +1,10 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Odin.Middleware;
+using Odin.Middleware.Versioner;
 using Odin.Providers.MemoryStoreProvider;
 using System;
+using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Odin.Tests
@@ -89,7 +92,7 @@ namespace Odin.Tests
         {
             var odin = new OdinMemoryStore();
             var cache = new OdinCache(odin, TimeSpan.FromMinutes(1));
-            await OdinTests.BasicOperations(cache);            
+            await OdinTests.BasicOperations(cache);
         }
 
         [TestMethod]
@@ -100,5 +103,27 @@ namespace Odin.Tests
             await OdinTests.BasicOperations(tracer);
         }
 
+        [TestMethod]
+        public async Task TestVersioner()
+        {
+            var odin = new OdinMemoryStore();
+            var versioner = new OdinVersioner(odin);
+
+            await versioner.Put("foo", "bar");
+            var versions = (await versioner.GetVersions("foo")).ToArray();
+            Assert.AreEqual(1, versions.Length);
+            Assert.AreEqual("bar", versions[0].Value);
+
+            // allow a few ticks to pass
+            Thread.Sleep(10);
+
+            await versioner.Put("foo", "baz");
+            versions = (await versioner.GetVersions("foo")).ToArray();
+            Assert.AreEqual(2, versions.Length);
+            Assert.AreEqual("baz", versions[1].Value);
+            Assert.AreEqual("bar", versions[0].Value);
+
+            await OdinTests.BasicOperations(versioner);
+        }
     }
 }

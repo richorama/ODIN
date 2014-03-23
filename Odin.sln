@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Odin.Providers.RedisStorePr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Odin.Middleware.Tracer", "Middleware\Tracer\Odin.Middleware.Tracer.csproj", "{E06DAA38-B8BC-407D-85B5-14BE41BA23F5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Odin.Middleware.Versioner", "Middleware\Versioner\Odin.Middleware.Versioner.csproj", "{301A172B-2894-4175-B750-5726463A237B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{E06DAA38-B8BC-407D-85B5-14BE41BA23F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E06DAA38-B8BC-407D-85B5-14BE41BA23F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E06DAA38-B8BC-407D-85B5-14BE41BA23F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{301A172B-2894-4175-B750-5726463A237B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{301A172B-2894-4175-B750-5726463A237B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{301A172B-2894-4175-B750-5726463A237B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{301A172B-2894-4175-B750-5726463A237B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -88,5 +94,6 @@ Global
 		{59C2429F-91E5-426A-81FD-369893C6BC19} = {F3468C05-B6F8-48B7-BC27-198D6ED2027F}
 		{CC0510E8-266C-4F26-80EA-8D0A9D96BFD2} = {CE770192-3472-42F9-ACBF-CEF66C2EF475}
 		{E06DAA38-B8BC-407D-85B5-14BE41BA23F5} = {CE770192-3472-42F9-ACBF-CEF66C2EF475}
+		{301A172B-2894-4175-B750-5726463A237B} = {CE770192-3472-42F9-ACBF-CEF66C2EF475}
 	EndGlobalSection
 EndGlobal
