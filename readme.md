@@ -80,6 +80,7 @@ Middleware currently available:
 * LoadBalancer (Send the request to a store using a round robin load balancer)
 * Cache (uses an in-memory cache)
 * Tracer (writes data access activity to trace)
+* Versioner (Records a version history of all writes)
 
 Middleware planned:
 
