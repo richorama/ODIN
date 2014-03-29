@@ -21,11 +21,14 @@ However, using the interface has some interesting benefits:
 An example of building up an ODIN data pipeline:
 
 ```cs
-// create a store to hold records in memory (this could be Windows Azure, Redis or files)
-IOdin odinStore = new OdinMemoryStore();
+// create a store to hold records in Redis (this could be Windows Azure, in-memory or files)
+IOdin odinStore = new OdinRedisStore();
 
-// create a middleware to write all data access to trace for debugging
-IOdin tracer = new OdinTracer(odinStore);
+// use some retry middleware logic
+IOdin retry = new Retry(odinStore);
+
+// use some more middleware to write all data access to trace for debugging
+IOdin tracer = new OdinTracer(retry);
 
 // create a strongly typed api to access the store
 var jsonStore = new OdinJsonSerializer<Foo>(tracer);
