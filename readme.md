@@ -81,10 +81,10 @@ Middleware currently available:
 * Cache (uses an in-memory cache)
 * Tracer (writes data access activity to trace)
 * Versioner (Records a version history of all writes)
+* Retry (add retry logic to the requests)
 
 Middleware planned:
 
-* Retry (add retry logic to the requests)
 * Single Thread (enforce single threaded access policy)
 * Read/write events
 * Logger (logs all events to another store)

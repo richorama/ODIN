@@ -125,5 +125,23 @@ namespace Odin.Tests
 
             await OdinTests.BasicOperations(versioner);
         }
+
+        [TestMethod]
+        public async Task TestRetry()
+        {
+            var counter = new Counter(null);
+            var retry = new Retry(counter);
+            try
+            {
+                await retry.Put("foo", "bar");
+            }
+            catch { }
+            Assert.AreEqual(5, counter.PutCount);
+
+            var odin = new OdinMemoryStore();
+            retry = new Retry(odin);
+            await OdinTests.BasicOperations(retry);
+        }
+
     }
 }
