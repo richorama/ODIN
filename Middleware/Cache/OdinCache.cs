@@ -21,7 +21,7 @@ namespace Odin.Middleware
         public async Task Put(string key, string value)
         {
             if (this.Cache.Contains(key) && this.Cache[key] as string == value) return;
-            this.Cache.Add(key, value, new DateTimeOffset(DateTime.Now, this.Duration));
+            this.Cache.Add(key, value, new DateTimeOffset(DateTime.UtcNow, this.Duration));
             await this.Store.Put(key, value);
         }
 
