@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{e6f2535b-533f-444c-8c26-27304585db46}</ProjectGuid>
+    <ProjectGuid>{E6F2535B-533F-444C-8C26-27304585DB46}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Odin.Providers.WindowsPhoneProvider</RootNamespace>
@@ -80,9 +80,13 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <ProjectReference Include="..\Odin\Odin.csproj">
+      <Project>{31b32bb6-a8f2-4ee8-b201-be3870090862}</Project>
+      <Name>Odin</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="OdinSettingsStore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
@@ -99,5 +103,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-
 </Project>
