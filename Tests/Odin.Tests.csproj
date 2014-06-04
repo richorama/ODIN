@@ -57,6 +57,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Consumers\GeoSpatial\Odin.Consumers.GeoSpatial.csproj">
+      <Project>{5c1b7d67-60fb-45ad-b66e-389c17da7aec}</Project>
+      <Name>Odin.Consumers.GeoSpatial</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Consumers\JsonSerializer\Odin.Consumers.JsonSerializer.csproj">
       <Project>{a6454837-9a6d-4b21-894e-51387177d1ae}</Project>
       <Name>Odin.Consumers.JsonSerializer</Name>

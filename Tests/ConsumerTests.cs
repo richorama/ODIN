@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Odin.Consumers.GeoSpatial;
 using Odin.Consumers.Triplestore;
 using Odin.Providers.MemoryStoreProvider;
 using System.Linq;
@@ -42,6 +43,19 @@ namespace Odin.Tests
             Assert.AreEqual(1, (await store.Get("Richard", "Loves", "Cheese")).Count());
             Assert.AreEqual(2, (await store.Get(subject: "Richard")).Count());
             Assert.AreEqual(3, (await store.Get()).Count());
+        }
+
+        [TestMethod]
+        public async Task TestGeoIndex()
+        {
+            var memStore = new OdinMemoryStore();
+            var store = new OdinGeoSpatial(memStore);
+            await store.Put(new Position { Latitude = 10, Longitude = 5 }, "position1", "value1");
+            var value = await store.Get("position1");
+            Assert.IsNotNull(value);
+            Assert.AreEqual("value1", value.Value);
+            Assert.AreEqual(10, value.Latitude);
+            Assert.AreEqual(5, value.Longitude);
         }
     }
 }

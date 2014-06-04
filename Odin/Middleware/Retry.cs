@@ -48,7 +48,8 @@ namespace Odin.Middleware
         public async Task<string> Get(string key)
         {
             string value = null;
-            var task = new Task(async () => {
+            var task = new Task(async () =>
+            {
                 value = await this.Target.Get(key);
             });
             await RetryLogic(() => task);
