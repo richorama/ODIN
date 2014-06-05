@@ -33,7 +33,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Odin.Middleware.Versioner",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Odin.Consumers.GeoSpatial", "Consumers\GeoSpatial\Odin.Consumers.GeoSpatial.csproj", "{5C1B7D67-60FB-45AD-B66E-389C17DA7AEC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Odin.Providers.WindowsPhoneProvider", "Odin.Providers.WindowsPhoneProvider\Odin.Providers.WindowsPhoneProvider.csproj", "{E6F2535B-533F-444C-8C26-27304585DB46}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Odin.Providers.WindowsPhoneProvider", "Providers\WindowsPhoneProvider\Odin.Providers.WindowsPhoneProvider.csproj", "{E6F2535B-533F-444C-8C26-27304585DB46}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
