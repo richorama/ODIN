@@ -57,47 +57,47 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Consumers\GeoSpatial\Odin.Consumers.GeoSpatial.csproj">
+    <ProjectReference Include="..\..\Consumers\GeoSpatial\Odin.Consumers.GeoSpatial.csproj">
       <Project>{5c1b7d67-60fb-45ad-b66e-389c17da7aec}</Project>
       <Name>Odin.Consumers.GeoSpatial</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Consumers\JsonSerializer\Odin.Consumers.JsonSerializer.csproj">
+    <ProjectReference Include="..\..\Consumers\JsonSerializer\Odin.Consumers.JsonSerializer.csproj">
       <Project>{a6454837-9a6d-4b21-894e-51387177d1ae}</Project>
       <Name>Odin.Consumers.JsonSerializer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Consumers\Triplestore\Odin.Consumers.Triplestore.csproj">
+    <ProjectReference Include="..\..\Consumers\Triplestore\Odin.Consumers.Triplestore.csproj">
       <Project>{59c2429f-91e5-426a-81fd-369893c6bc19}</Project>
       <Name>Odin.Consumers.Triplestore</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Middleware\Cache\Odin.Middleware.Cache.csproj">
+    <ProjectReference Include="..\..\Middleware\Cache\Odin.Middleware.Cache.csproj">
       <Project>{cc0510e8-266c-4f26-80ea-8d0a9d96bfd2}</Project>
       <Name>Odin.Middleware.Cache</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Middleware\Tracer\Odin.Middleware.Tracer.csproj">
+    <ProjectReference Include="..\..\Middleware\Tracer\Odin.Middleware.Tracer.csproj">
       <Project>{e06daa38-b8bc-407d-85b5-14be41ba23f5}</Project>
       <Name>Odin.Middleware.Tracer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Middleware\Versioner\Odin.Middleware.Versioner.csproj">
+    <ProjectReference Include="..\..\Middleware\Versioner\Odin.Middleware.Versioner.csproj">
       <Project>{301a172b-2894-4175-b750-5726463a237b}</Project>
       <Name>Odin.Middleware.Versioner</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Providers\RedisStoreProvider\Odin.Providers.RedisStoreProvider.csproj">
+    <ProjectReference Include="..\..\Providers\RedisStoreProvider\Odin.Providers.RedisStoreProvider.csproj">
       <Project>{a3a29de4-bf86-47e5-9010-f7ff48c1fa94}</Project>
       <Name>Odin.Providers.RedisStoreProvider</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Providers\TableStoreProvider\Odin.Providers.TableStoreProvider.csproj">
+    <ProjectReference Include="..\..\Providers\TableStoreProvider\Odin.Providers.TableStoreProvider.csproj">
       <Project>{df1febe4-5573-4272-b185-1499a3591296}</Project>
       <Name>Odin.Providers.TableStoreProvider</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Odin\Odin.csproj">
+    <ProjectReference Include="..\..\Odin\Odin.csproj">
       <Project>{31b32bb6-a8f2-4ee8-b201-be3870090862}</Project>
       <Name>Odin</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Providers\FileStoreProvider\Odin.Providers.FileStoreProvider.csproj">
+    <ProjectReference Include="..\..\Providers\FileStoreProvider\Odin.Providers.FileStoreProvider.csproj">
       <Project>{cee0bf18-b5db-4c2f-aaaa-9b6bfc85ae5a}</Project>
       <Name>Odin.Providers.FileStoreProvider</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Providers\MemoryStoreProvider\Odin.Providers.MemoryStoreProvider.csproj">
+    <ProjectReference Include="..\..\Providers\MemoryStoreProvider\Odin.Providers.MemoryStoreProvider.csproj">
       <Project>{6cbd499b-5fb9-4afc-81f3-56d935827b0b}</Project>
       <Name>Odin.Providers.MemoryStoreProvider</Name>
     </ProjectReference>

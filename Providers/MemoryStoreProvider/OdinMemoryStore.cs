@@ -34,7 +34,7 @@ namespace Odin.Providers.MemoryStoreProvider
 
         public Task<IEnumerable<KeyValue>> Search(string start = null, string end = null)
         {
-            var results = dictionary.OrderBy(x => x.Key);
+             var results = dictionary.OrderBy(x => x.Key);
             if (!string.IsNullOrWhiteSpace(start)) results = results.Where(x => string.Compare(x.Key, start) >= 0).OrderBy(x => x.Key);
             if (!string.IsNullOrWhiteSpace(end)) results = results.Where(x => string.Compare(x.Key, end) <= 0).OrderBy(x => x.Key);
             return Task.FromResult(results.Select(x => new KeyValue { Key = x.Key, Value = x.Value }));
