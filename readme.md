@@ -63,6 +63,9 @@ Storage providers currently available:
 * File System
 * Windows Azure Table Storage
 * Redis
+* WinRT file system
+* WinRT settings
+* Windows Phone settings
 
 Storage providers planned:
 
