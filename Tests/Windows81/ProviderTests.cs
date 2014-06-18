@@ -12,9 +12,16 @@ namespace Odin.Tests.Windows81
     public class Windows81ProviderTests
     {
         [TestMethod]
-        public async Task Windows81()
+        public async Task Windows81SettingsStore()
         {
             var settingsStore = new OdinSettingsStore();
+            await BasicOperations(settingsStore);
+        }
+
+        [TestMethod]
+        public async Task Windows81FileStore()
+        {
+            var settingsStore = new OdinFileStore();
             await BasicOperations(settingsStore);
         }
 
