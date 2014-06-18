@@ -1,9 +1,8 @@
-﻿using Odin;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Windows.Storage;
-using System.Linq;
 
 namespace Odin.Providers.Windows81Provider
 {
@@ -17,6 +16,16 @@ namespace Odin.Providers.Windows81Provider
         public OdinFileStore()
         {
             this.Folder = ApplicationData.Current.LocalFolder;
+        }
+
+        public static OdinFileStore CreateLocalFolder()
+        {
+            return new OdinFileStore(ApplicationData.Current.LocalFolder);
+        }
+
+        public static OdinFileStore CreateRoamingFolder()
+        {
+            return new OdinFileStore(ApplicationData.Current.RoamingFolder);
         }
 
         public StorageFolder Folder { get; private set; }
@@ -34,7 +43,7 @@ namespace Odin.Providers.Windows81Provider
                 var file = await ApplicationData.Current.LocalFolder.GetFileAsync(key).AsTask();
                 return await FileIO.ReadTextAsync(file).AsTask();
             }
-            catch 
+            catch
             {
                 return null;
             }
