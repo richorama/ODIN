@@ -11,10 +11,17 @@ namespace Odin.Tests.WindowsPhone
     public class ProviderTests
     {
         [TestMethod]
-        public async Task WindowsPhone()
+        public async Task TestWindowsPhoneSettingsStore()
         {
             var settingsStore = new OdinSettingsStore();
             await BasicOperations(settingsStore);
+        }
+
+        [TestMethod]
+        public async Task TestWindowsPhoneFileStore()
+        {
+            var fileStore = new OdinFileStore();
+            await BasicOperations(fileStore);
         }
 
 
