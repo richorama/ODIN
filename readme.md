@@ -59,18 +59,18 @@ Storage providers are classes deriving from IOdin, which store data somewhere. T
 
 Storage providers currently available:
 
-* In Memory
+* In-memory
 * File System
-* Windows Azure Table Storage
+* Azure Table Storage
 * Redis
 * WinRT file system
 * WinRT settings
+* Windows Phone file system
 * Windows Phone settings
 
 Storage providers planned:
 
-* SQL
-* STDIN/STDOUT?
+* SQL Server
 * Application Settings?
 * ...
 
@@ -93,7 +93,6 @@ Middleware planned:
 
 * Single Thread (enforce single threaded access policy)
 * Read/write events
-* Logger (logs all events to another store)
 
 ## Consumers
 
@@ -107,7 +106,7 @@ Consumes currently available:
 Consumers planned:
 
 * Free text index
-* Geospatial index
+* Geospatial index (half implemented)
 
 ## License
 
